@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 @Entity
 @Getter
@@ -17,8 +16,8 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT를 설정
     private Long id;
 
-    @Column(name = "user_id", length = 15, nullable = false, unique = true)
-    private String userId;
+    @Column(name = "username", length = 15, nullable = false, unique = true)
+    private String username;
 
     @Column(name = "password", length = 100, nullable = false)
     private String password;
@@ -52,14 +51,18 @@ public class Member {
 
 
     @Builder
-    public Member (String userId, String password, String nickname, String email, String phoneNumber,
-                    LocalDateTime createAt, Integer level){
-        this.userId = userId;
+    public Member (String username, String password, String nickname, String email, String phoneNumber,
+                    LocalDateTime createAt){
+        this.username = username;
         this.password = password;
         this.nickname = nickname;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.createAt = createAt;
-        this.level = level;
+        this.level = 1;
+        this.scoreTotal = 0;
+        this.winCount = 0;
+        this.loseCount = 0;
+        this.drawCount = 0;
     }
 }

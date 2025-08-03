@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    // 글쓰기 버튼 클릭시 GET 요청
+    // 시작하기 버튼 클릭시 GET 요청
     $('#board').on('click', () => {
         $(location).attr('href', '/board');
     });
@@ -10,7 +10,7 @@ $(document).ready(() => {
         if($(e.currentTarget).text() === '로그인'){
             $(location).attr('href', '/login');
         }else{
-            logout();
+//            logout();
         }
     });
 });
