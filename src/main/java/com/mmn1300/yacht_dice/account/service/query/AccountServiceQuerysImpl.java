@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class AccountServiceQuerysImpl implements AccountServiceQuerys{
 
     @Autowired
-    private AccountRepositoryQuerys accountRepositoryQuerys;
+    private AccountRepositoryQuerys accountRepository;
 
 
 
     @Override
     public boolean memberExistsById(String username) {
-        return false;
+        return accountRepository.existsByUsername(username);
     }
 }
