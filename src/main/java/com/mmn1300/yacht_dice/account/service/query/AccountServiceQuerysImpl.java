@@ -7,15 +7,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional(readOnly = true)
-public class AccountServiceQuerysImpl implements AccountServiceQuerys{
+public class AccountServiceQuerysImpl implements AccountServiceQuerys {
 
     @Autowired
-    private AccountRepositoryQuerys accountRepository;
+    private AccountRepositoryQuerys accountRepositoryQuerys;
 
 
 
     @Override
     public boolean memberExistsById(String username) {
-        return accountRepository.existsByUsername(username);
+        return accountRepositoryQuerys.existsByUsername(username);
     }
 }

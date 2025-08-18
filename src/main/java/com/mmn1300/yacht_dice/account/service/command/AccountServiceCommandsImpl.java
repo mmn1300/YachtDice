@@ -12,12 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class AccountServiceCommandsImpl implements AccountServiceCommands{
 
     @Autowired
-    private AccountRepositoryCommands accountRepository;
+    private AccountRepositoryCommands accountRepositoryCommands;
 
 
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public void save(Member member) throws Exception {
-        accountRepository.save(member);
+        accountRepositoryCommands.save(member);
     }
 }

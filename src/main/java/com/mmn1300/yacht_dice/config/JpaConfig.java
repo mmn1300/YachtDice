@@ -7,10 +7,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories(basePackages = {
-        "project.yacht_dice.account.repository"
+        "com.mmn1300.yacht_dice.account.repository"
 })
 @EntityScan(basePackages = {
-        "project.yacht_dice.account.domain.entity"
+        "com.mmn1300.yacht_dice.account.domain.entity"
 })
 //@ComponentScan(basePackages = {
 //        "project.yacht_dice.account.service.dao"
